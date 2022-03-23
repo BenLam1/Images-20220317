@@ -59,8 +59,25 @@ rectYPic2 = height*1/2;
 rectWidthPic2 = width*6/8;
 rectHeightPic2 = height*1/2;
 //
+float pic1WidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdjusted;
+pic1WidthAdjusted = rectWidthPic1 * imageWidthRatioPic1;
+pic1HeightAdjusted = rectHeightPic1 * imageHeightRatioPic1;
+pic2WidthAdjusted = rectWidthPic2 * imageWidthRatioPic2;
+pic2HeightAdjusted = rectHeightPic2 * imageHeightRatioPic2;
+println(pic1Width, pic1Height, pic2Width, pic2Height);
+println(imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2, imageHeightRatioPic2);
+//
+//
 //Rectangle Layout & Image Printing on Canvas
-rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image 1, landscape presentation
+color red=#FF0000;
+fill(red);
+//rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image 1, landscape presentation
 rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image 2, landscape presentation
-image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1);
-image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2);
+// Image using Rect() Variables
+//image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1);
+//image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2);
+// Change the Rect() Variables to Aspect Ratio
+image(pic1, rectXPic1, rectYPic1, pic1WidthAdjusted, pic1HeightAdjusted);
+println ("Image one looks good, put some text underneath to fill in the space");
+//image(pic2, rectXPic2, rectYPic2, pic2WidthAdjusted, pic2HeightAdjusted);
+image(pic2, rectXPic2, rectYPic2+(rectYPic2*1/4), pic2WidthAdjusted, pic2HeightAdjusted);
